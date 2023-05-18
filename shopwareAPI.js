@@ -24,7 +24,7 @@ const pool = new Pool({
 })
 
 const processObj = async (obj, name, shopId, tenantId) => {
-  var tmp = getObjectFields(obj, name, shopId, tenantId)
+  getObjectFields(obj, name, shopId, tenantId)
 }
 
 const getCannedJobsFields = async (obj, shopId) => {
