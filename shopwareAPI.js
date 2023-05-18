@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { Pool } = require('pg');
 const PARTNER = "e85dd677-3632-4ecf-bd6a-aa3a8b61c340"
 const SECRET = "gsK1d-XXrQGNHs53j0LyNhucALhrzQVnTpYOLzF5BAg"
 const ax = axios.create({
@@ -11,6 +12,16 @@ const ax = axios.create({
 
 const rateLimit = require('axios-rate-limit')
 const api = rateLimit(ax, { maxRequests: 7, perMilliseconds: 1000, maxRPS: 7 })
+
+const pool = new Pool({
+  //user:
+  //host:
+  //database:
+  //password:
+  //port:
+  //max:
+
+})
 
 const processObj = async (obj, name, shopId, tenantId) => {
   var tmp = getObjectFields(obj, name, shopId, tenantId)
